@@ -13,6 +13,11 @@ jobs:
       
     steps: 
       - name: check
-        run: npm run js:check    
+
+        with:
+        node-version: ${{ matrix.node-version }} 
+
+      - run: npm ci
+      - run: js:check
     
     
